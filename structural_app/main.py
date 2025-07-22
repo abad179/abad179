@@ -5,7 +5,10 @@ from __future__ import annotations
 import argparse
 import numpy as np
 
+from typing import Any
+
 from beam import SimpleBeam
+from plot import plot_results
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -18,6 +21,11 @@ def main(argv: list[str] | None = None) -> None:
         nargs="*",
         default=[0.0],
         help="Posiciones donde evaluar [m]",
+    )
+    parser.add_argument(
+        "--plot",
+        action="store_true",
+        help="Muestra una ventana con los diagramas",
     )
     args = parser.parse_args(argv)
 
@@ -32,6 +40,9 @@ def main(argv: list[str] | None = None) -> None:
     M = beam.moment_at(x)
     for xi, vi, mi in zip(x, V, M):
         print(f"x={xi:.2f} m -> V={vi:.2f} kN, M={mi:.2f} kN*m")
+
+    if args.plot:
+        plot_results(beam)
 
 
 if __name__ == "__main__":

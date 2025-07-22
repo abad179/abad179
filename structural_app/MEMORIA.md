@@ -41,4 +41,5 @@ uniformemente.
    \[ M(x) = \frac{q x (L - x)}{2} \]
 
 Estos resultados son los que devuelve la clase `SimpleBeam` implementada en
-`beam.py`.
+`beam.py`. La función `plot_results` permite visualizar gráficamente estos
+diagramas a lo largo de la luz.

@@ -12,11 +12,11 @@ apoyada con carga uniformemente distribuida.
 ## Ejecución
 
 ```bash
-python main.py
+python main.py 5 10 --x 0 2.5 5
 ```
 
-El programa imprime en consola las reacciones y valores máximos de
-cortante y momento.
+El programa imprime en consola las reacciones y los valores de cortante y
+momento en las posiciones indicadas.
 
 ## Uso como módulo
 
@@ -27,4 +27,5 @@ from beam import SimpleBeam
 
 beam = SimpleBeam(5.0, 10.0)
 print(beam.reactions())
+print(beam.moment_at(2.5))
 ```

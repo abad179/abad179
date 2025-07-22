@@ -32,5 +32,13 @@ uniformemente.
 
    \[ M_{\text{max}} = \frac{qL^2}{8} \]
 
-Estos resultados son los que devuelve la clase `SimpleBeam` implementada
-en `beam.py`.
+4. **Distribución de cortante y momento**
+
+   A una distancia `x` desde el extremo izquierdo, los valores son:
+
+   \[ V(x) = q\left(\frac{L}{2} - x\right) \]
+
+   \[ M(x) = \frac{q x (L - x)}{2} \]
+
+Estos resultados son los que devuelve la clase `SimpleBeam` implementada en
+`beam.py`.

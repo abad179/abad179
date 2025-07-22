@@ -8,4 +8,5 @@
 
 This repository now includes a simple example of how to calculate
 reactions, shear and bending moment for a simply supported beam with a
-uniformly distributed load. See `structural_app/README.md` for details.
+uniformly distributed load. The tool can also evaluate shear and moment
+at any position along the beam. See `structural_app/README.md` for details.

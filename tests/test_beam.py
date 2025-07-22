@@ -19,6 +19,12 @@ class TestSimpleBeam(unittest.TestCase):
         self.assertAlmostEqual(beam.max_shear(), 36.0)
         self.assertAlmostEqual(beam.max_moment(), 54.0)
 
+    def test_diagram_values(self):
+        beam = SimpleBeam(6.0, 12.0)
+        # At midspan
+        self.assertAlmostEqual(beam.shear_at(3.0), 0.0, places=5)
+        self.assertAlmostEqual(beam.moment_at(3.0), 54.0)
+
 
 if __name__ == "__main__":
     unittest.main()

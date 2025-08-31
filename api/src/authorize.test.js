@@ -1,8 +1,19 @@
 const authorize = require('./authorize');
 
 describe('authorize middleware', () => {
-  test('allows access for valid roles', () => {
+  test('allows access for valid roles provided as separate args', () => {
     const req = { user: { role: 'admin' } };
+    const res = { status: jest.fn().mockReturnThis(), send: jest.fn() };
+    const next = jest.fn();
+
+    authorize('admin', 'user')(req, res, next);
+
+    expect(next).toHaveBeenCalled();
+    expect(res.status).not.toHaveBeenCalled();
+  });
+
+  test('allows access for valid roles provided as an array', () => {
+    const req = { user: { role: 'user' } };
     const res = { status: jest.fn().mockReturnThis(), send: jest.fn() };
     const next = jest.fn();
 
@@ -17,7 +28,7 @@ describe('authorize middleware', () => {
     const res = { status: jest.fn().mockReturnThis(), send: jest.fn() };
     const next = jest.fn();
 
-    authorize(['admin', 'user'])(req, res, next);
+    authorize('admin', 'user')(req, res, next);
 
     expect(res.status).toHaveBeenCalledWith(403);
     expect(res.send).toHaveBeenCalledWith('Forbidden');

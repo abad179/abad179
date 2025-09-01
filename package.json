@@ -1,0 +1,16 @@
+{
+  "name": "abad179",
+  "version": "1.0.0",
+  "description": "- 👋 Hi, I’m @abad179 - 👀 I’m interested in ... - 🌱 I’m currently learning ... - 💞️ I’m looking to collaborate on ... - 📫 How to reach me ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.1.1"
+  }
+}

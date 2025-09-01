@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parqu&iacute;metro Demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css" />
+  <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth">
+    <h1>Inicio de sesi&oacute;n</h1>
+    <form id="loginForm">
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" id="name" />
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="field">
+        <label>Placa (solo clientes)</label>
+        <input type="text" id="plate" />
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <h2 id="roleTitle"></h2>
+      <div class="actions">
+        <button id="exportBtn">Exportar</button>
+        <button id="importBtn">Importar</button>
+        <button id="zonesBtn">Aplicar Zonas</button>
+        <button id="overlayBtn">Overlay</button>
+        <button id="resetBtn">Reiniciar</button>
+        <button id="toggleView">Croquis</button>
+        <button id="logout">Cerrar sesi&oacute;n</button>
+      </div>
+    </header>
+    <main>
+      <aside id="sidebar">
+        <h3>M&eacute;tricas</h3>
+        <ul>
+          <li>Total: <span id="metricTotal">0</span></li>
+          <li>Libres: <span id="metricFree">0</span></li>
+          <li>Activos: <span id="metricActive">0</span></li>
+        </ul>
+      </aside>
+      <div id="viewContainer">
+        <section id="map"></section>
+        <section id="sketch" class="hidden">
+          <svg id="sketchSvg" viewBox="0 0 100 60"></svg>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
